@@ -13,6 +13,7 @@ import java.io.IOException;
 
 public class Network {
 
+    // Este metodo nos dira si hay alguna red habilitada wifi/datos
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public static boolean isOnline(Context context) {
 
@@ -40,6 +41,10 @@ public class Network {
         return false;
     }
 
+    /**
+     * Este metodo nos dira si tendremos acceso a internet por medio de un ping
+     * a alguno de las grandes empresas que estan agregadas en el metodo
+     * */
     public boolean connectedToInternet() throws IOException, InterruptedException {
         String provider = "ping -c 1 google.com";
         // String provider = "";
@@ -55,7 +60,7 @@ public class Network {
                 exito = (Runtime.getRuntime().exec (alternet_provider2).waitFor() == 0);
             }
         }
-
+        
         return exito;
     }
 }

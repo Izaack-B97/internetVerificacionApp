@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
         // Verificamos conexion a internet cuando arranca la aplicacion
         if(network.isOnline(getApplicationContext())) {
             Log.d("TAG", "En linea");
+
+            // Verificamos que tenga acceso a internet
             try {
                 if (network.connectedToInternet()) {
                     Log.d("Tag", "Se puede navegar");
@@ -45,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+
         } else {
             Log.d("TAG", "No en linea");
         }
