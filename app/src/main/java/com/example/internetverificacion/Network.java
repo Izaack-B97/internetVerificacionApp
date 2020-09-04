@@ -60,7 +60,7 @@ public class Network {
                 exito = (Runtime.getRuntime().exec (alternet_provider2).waitFor() == 0);
             }
         }
-        
+
         return exito;
     }
 }
